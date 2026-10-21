@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://naocaianogolpe.com.br/sitemap.xml

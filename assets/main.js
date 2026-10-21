@@ -82,6 +82,7 @@ if (quiz) {
   }
 
   el.opcoes.addEventListener('click', e => {
+    queueMicrotask(() => el.opcoes.querySelector('button')?.focus({ preventScroll: true }));
     const b = e.target.closest('button');
     if (!b) return;
     if (b.hasAttribute('data-reiniciar')) { atual = 0; acertos = 0; mostrar(); return; }

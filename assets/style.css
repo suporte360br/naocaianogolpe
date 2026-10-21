@@ -83,8 +83,7 @@ section.alt { background: var(--fundo-alt); }
 .cartao { background: #fff; border: 1px solid var(--borda); border-radius: var(--raio); padding: 26px; box-shadow: var(--sombra); display: flex; flex-direction: column; }
 .cartao p { margin: 0 0 16px; color: var(--suave); font-size: .97rem; }
 .cartao .icone { font-size: 1.8rem; margin-bottom: 10px; }
-.cartao a.mais { margin-top: auto; font-weight: 700; text-decoration: none; }
-.cartao a.mais::after { content: " →"; }
+.cartao .mais { margin-top: auto; font-weight: 700; color: var(--verde-escuro); }
 a.cartao { text-decoration: none; color: inherit; transition: transform .2s, border-color .2s; }
 a.cartao:hover { transform: translateY(-3px); border-color: var(--verde); }
 

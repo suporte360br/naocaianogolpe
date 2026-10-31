@@ -80,6 +80,7 @@ section.alt { background: var(--fundo-alt); }
 .rotulo { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 700; color: var(--verde); margin-bottom: 8px; display: block; }
 
 .grade { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+#golpes .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 .cartao { background: #fff; border: 1px solid var(--borda); border-radius: var(--raio); padding: 26px; box-shadow: var(--sombra); display: flex; flex-direction: column; }
 .cartao p { margin: 0 0 16px; color: var(--suave); font-size: .97rem; }
 .cartao .icone { font-size: 1.8rem; margin-bottom: 10px; }

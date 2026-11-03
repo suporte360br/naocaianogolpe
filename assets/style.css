@@ -181,3 +181,4 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .logo-parceiro { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 14px; }
 .outros-testes { margin: 18px 0 0; font-weight: 600; }
 .artigo .quiz { margin: 8px 0 12px; }
+.botoes-parceiros { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 0; }

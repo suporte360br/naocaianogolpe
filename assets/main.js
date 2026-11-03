@@ -9,10 +9,9 @@ if (botaoMenu && menu) {
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('aberto')));
 }
 
-// Quiz "É golpe ou não?"
-const quiz = document.getElementById('quiz');
-if (quiz) {
-  const perguntas = [
+// Testes "É golpe ou não?": cada .quiz[data-quiz] usa o banco de perguntas com o mesmo nome
+const bancos = {
+  geral: [
     {
       canal: 'WhatsApp · número desconhecido',
       texto: '"Oi mãe, troquei de número! Esse é o novo. Pode me fazer um Pix de R$ 1.200? Te devolvo amanhã, é urgente 🙏"',
@@ -49,7 +48,88 @@ if (quiz) {
       golpe: true,
       explicacao: 'Loja falsa. Preço muito abaixo do mercado, pagamento só via Pix e site sem identificação são os três sinais clássicos. Pesquise o CNPJ e a reputação antes de comprar.'
     }
-  ];
+  ],
+  motoboy: [
+    {
+      canal: 'Ligação · “central do banco”',
+      texto: '"Detectamos uma compra suspeita no seu cartão. Já bloqueamos, mas vamos mandar um portador buscar o cartão na sua casa para a perícia."',
+      golpe: true,
+      explicacao: 'Golpe do motoboy. Banco nenhum manda alguém buscar cartão em casa, nem para perícia, nem para troca. Desligue e confira no app do banco.'
+    },
+    {
+      canal: 'Ligação',
+      texto: '"Para sua segurança, corte o cartão ao meio, sem danificar o chip, e coloque num envelope. O portador passa daqui a pouco."',
+      golpe: true,
+      explicacao: 'O chip inteiro continua funcionando. Com o chip e a senha, os golpistas fazem compras e saques. Cartão cancelado se descarta cortando o chip, e ninguém vem buscar.'
+    },
+    {
+      canal: 'Ligação · digite no teclado',
+      texto: '"Para confirmar o cancelamento, digite a senha do cartão no teclado do telefone."',
+      golpe: true,
+      explicacao: 'O banco nunca pede a senha do cartão, nem por voz nem pelo teclado do telefone. Quem pede a senha é golpista.'
+    },
+    {
+      canal: 'Ligação · telefone fixo',
+      texto: 'O “atendente” diz: "Desligue e ligue para o número do verso do cartão". Você liga na mesma hora, do mesmo telefone fixo, e cai numa central que confirma tudo.',
+      golpe: true,
+      explicacao: 'Truque da linha presa: no telefone fixo, os golpistas mantêm a chamada aberta e fingem ser a central. Espere alguns minutos ou ligue de outro aparelho, como o celular.'
+    },
+    {
+      canal: 'App oficial do banco',
+      texto: 'Você abre o app, vê uma compra que não fez, bloqueia o cartão ali mesmo e pede um novo, que chega pelos Correios em envelope lacrado.',
+      golpe: false,
+      explicacao: 'Esse é o caminho certo: você mesmo abriu o app oficial, bloqueou e pediu a segunda via. Ninguém vai à sua casa recolher o cartão antigo.'
+    },
+    {
+      canal: 'Na sua porta',
+      texto: 'Um motoboy chega com crachá e uniforme “do banco” e diz que veio buscar o cartão bloqueado, como combinado por telefone.',
+      golpe: true,
+      explicacao: 'Crachá e uniforme não provam nada. Não entregue o cartão nem a senha a ninguém. Feche a porta, ligue para o banco e chame a polícia pelo 190.'
+    }
+  ],
+  'prova-de-vida': [
+    {
+      canal: 'SMS',
+      texto: '"INSS: sua prova de vida vence hoje e seu benefício será bloqueado. Regularize agora: inss-provadevida.com"',
+      golpe: true,
+      explicacao: 'O INSS não manda link por SMS nem por WhatsApp. Hoje a prova de vida é feita pelo próprio INSS, cruzando dados de outros cadastros. Consulte só pelo app Meu INSS ou pela Central 135.'
+    },
+    {
+      canal: 'WhatsApp · “servidor do INSS”',
+      texto: '"Bom dia! Vamos fazer sua prova de vida por videochamada. Mostre seu rosto e o documento com foto para a câmera."',
+      golpe: true,
+      explicacao: 'Golpe. Com a imagem do seu rosto e do documento, os criminosos tentam abrir contas e pegar empréstimos no seu nome. O INSS não faz prova de vida por videochamada no WhatsApp.'
+    },
+    {
+      canal: 'App Meu INSS',
+      texto: 'Você mesmo abre o app Meu INSS e vê um aviso para fazer a prova de vida com reconhecimento facial dentro do próprio aplicativo.',
+      golpe: false,
+      explicacao: 'Legítimo: quando o INSS não consegue confirmar automaticamente, a prova de vida pode ser feita no app oficial Meu INSS. O importante é que foi você quem abriu o app.'
+    },
+    {
+      canal: 'Na sua porta',
+      texto: 'Uma pessoa diz ser do INSS, mostra um crachá e pede o cartão e a senha do banco para “atualizar a prova de vida”.',
+      golpe: true,
+      explicacao: 'O INSS nunca pede cartão ou senha do banco. Não deixe a pessoa entrar, não entregue nada e confirme qualquer pendência pela Central 135.'
+    },
+    {
+      canal: 'Ligação',
+      texto: '"Seu benefício foi suspenso por falta de prova de vida. Para reativar hoje, é só pagar a taxa de R$ 49,90 por Pix."',
+      golpe: true,
+      explicacao: 'A prova de vida é gratuita, e o INSS não cobra taxa para liberar benefício. Pedido de Pix para “reativar” é sempre golpe.'
+    },
+    {
+      canal: 'Agência do seu banco',
+      texto: 'Você vai à agência onde recebe o benefício e faz a prova de vida com o atendente, mostrando seu documento com foto.',
+      golpe: false,
+      explicacao: 'Legítimo: os bancos que pagam benefícios do INSS também fazem a prova de vida no caixa ou no atendimento, de forma gratuita. Foi você quem foi até lá.'
+    }
+  ]
+};
+
+document.querySelectorAll('.quiz[data-quiz]').forEach(quiz => {
+  const perguntas = bancos[quiz.dataset.quiz];
+  if (!perguntas) return;
 
   let atual = 0, acertos = 0;
   const el = {
@@ -96,6 +176,6 @@ if (quiz) {
   });
 
   mostrar();
-}
+});
 
 document.querySelectorAll('[data-ano]').forEach(e => e.textContent = new Date().getFullYear());

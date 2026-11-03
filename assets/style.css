@@ -173,3 +173,8 @@ section.tema { padding: 40px 0 0; }
 section.tema:last-of-type { padding-bottom: 72px; }
 section.tema h2 { font-size: 1.4rem; }
 section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.compartilhar { margin: 40px 0 8px; padding: 22px 24px; border-radius: var(--raio); background: #e7f8ee; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.compartilhar p { margin: 0; flex: 1 1 300px; }
+.btn.whatsapp { background: #128c4a; }
+.btn.whatsapp:hover { background: #0b5d34; }
+.btn.whatsapp::before { content: "💬 "; }

@@ -190,3 +190,6 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .parceiro strong { display: block; color: var(--tinta); font-size: 1.1rem; margin-bottom: 2px; }
 .parceiro em { display: block; font-style: normal; font-weight: 700; color: var(--verde-escuro); margin-top: 6px; }
 @media (max-width: 520px) { .parceiros-empresas { grid-template-columns: 1fr; } }
+.aviso-corporativo { grid-column: 1 / -1; margin: 0 0 4px; padding: 16px 18px; border-radius: 12px; background: var(--ambar-claro); color: var(--ambar-escuro); border: 1px solid #f3d38a; }
+.logo-sobre { float: right; width: 180px; height: 180px; margin: 0 0 16px 24px; border-radius: var(--raio); background: #fff; }
+@media (max-width: 600px) { .logo-sobre { float: none; display: block; margin: 0 auto 16px; width: 140px; height: 140px; } }

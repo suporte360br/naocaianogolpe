@@ -108,6 +108,25 @@ a.cartao:hover { transform: translateY(-3px); border-color: var(--verde); }
 .quiz .resposta { margin-top: 20px; padding: 16px 18px; border-radius: 12px; display: none; }
 .quiz .resposta.certo { display: block; background: #e7f8ee; border: 1px solid #a6e3bf; }
 .quiz .resposta.errado { display: block; background: #fdecec; border: 1px solid #f3b2b4; }
+.quiz .resposta.resultado { display: block; padding: 0; margin-top: 24px; }
+.resultado-grafico { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.rosca { width: 150px; height: 150px; flex: none; }
+.rosca text { font-family: "Archivo Black", sans-serif; font-size: 8px; fill: var(--tinta); }
+.legenda { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 1.05rem; }
+.legenda .ponto { display: inline-block; width: 14px; height: 14px; border-radius: 4px; margin-right: 10px; vertical-align: -1px; }
+.ponto.certo { background: var(--verde); }
+.ponto.errado { background: var(--alerta); }
+.por-situacao { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 6px; font-size: .95rem; }
+.por-situacao li { padding: 8px 12px; border-radius: 10px; border: 1px solid; }
+.por-situacao li.certo { background: #e7f8ee; border-color: #a6e3bf; }
+.por-situacao li.errado { background: #fdecec; border-color: #f3b2b4; }
+.por-situacao li span { font-weight: 800; margin-right: 6px; }
+.por-situacao li.certo span { color: var(--verde-escuro); }
+.por-situacao li.errado span { color: var(--alerta); }
+.por-situacao em { font-style: normal; color: var(--suave); float: right; }
+.quiz .resultado h3 { margin: 26px 0 10px; }
+.sugestoes { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
+.sugestoes a { font-weight: 700; white-space: nowrap; }
 
 /* Emergência */
 .emergencia { background: #1a0f10; color: #f1dede; }

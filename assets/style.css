@@ -222,7 +222,7 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .vitrine-trilho::-webkit-scrollbar { display: none; }
 .vitrine-trilho:focus-visible { outline: 3px solid var(--aviso); outline-offset: 3px; }
 .vitrine-slide { flex: 0 0 100%; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 22px 22px 24px; background: #fff; color: var(--texto); text-decoration: none; }
-.vitrine-img { width: 150px; height: auto; }
+.vitrine-img { width: 80px; height: auto; }
 .vitrine-texto { display: flex; flex-direction: column; gap: 4px; align-items: center; }
 .vitrine-texto strong { font-family: "Archivo Black", "Inter", sans-serif; font-size: 1.35rem; line-height: 1.2; color: var(--tinta); }
 .vitrine-texto span { color: var(--suave); font-size: 1rem; }
@@ -237,6 +237,6 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .vitrine-pontos button[aria-current="true"] { width: 28px; background: var(--verde); }
 @media (max-width: 860px) {
   .vitrine { max-width: 400px; }
-  .vitrine-img { width: 120px; }
+  .vitrine-img { width: 72px; }
 }
 @media (prefers-reduced-motion: reduce) { .vitrine-trilho { scroll-behavior: auto; } }

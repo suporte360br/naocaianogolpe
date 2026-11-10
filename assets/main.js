@@ -291,3 +291,43 @@ document.querySelectorAll('.quiz[data-quiz]').forEach(quiz => {
 });
 
 document.querySelectorAll('[data-ano]').forEach(e => e.textContent = new Date().getFullYear());
+
+// Vitrine: carrossel dos golpes em alta
+document.querySelectorAll('.vitrine').forEach(v => {
+  const trilho = v.querySelector('.vitrine-trilho');
+  const slides = [...trilho.children];
+  const pontos = v.querySelector('.vitrine-pontos');
+  let atual = 0, timer = null, parado = false;
+  const botoes = slides.map((s, k) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Mostrar ' + s.querySelector('strong').textContent);
+    b.addEventListener('click', () => { parar(); ir(k); });
+    pontos.appendChild(b);
+    return b;
+  });
+  const marcar = () => botoes.forEach((b, k) => b.setAttribute('aria-current', k === atual ? 'true' : 'false'));
+  const ir = n => { atual = (n + slides.length) % slides.length; trilho.scrollTo({ left: atual * trilho.clientWidth }); marcar(); };
+  const parar = () => { parado = true; clearInterval(timer); };
+  const iniciar = () => {
+    clearInterval(timer);
+    if (parado || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(() => ir(atual + 1), 6000);
+  };
+  v.querySelectorAll('.vitrine-seta').forEach(b => b.addEventListener('click', () => { parar(); ir(atual + Number(b.dataset.dir)); }));
+  let quadro;
+  trilho.addEventListener('scroll', () => {
+    cancelAnimationFrame(quadro);
+    quadro = requestAnimationFrame(() => { atual = Math.round(trilho.scrollLeft / trilho.clientWidth); marcar(); });
+  }, { passive: true });
+  trilho.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); parar(); ir(atual + (e.key === 'ArrowRight' ? 1 : -1)); }
+  });
+  trilho.addEventListener('pointerdown', parar);
+  v.addEventListener('mouseenter', () => clearInterval(timer));
+  v.addEventListener('mouseleave', iniciar);
+  v.addEventListener('focusin', () => clearInterval(timer));
+  v.addEventListener('focusout', iniciar);
+  marcar();
+  iniciar();
+});

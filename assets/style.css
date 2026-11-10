@@ -214,3 +214,31 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .aviso-corporativo { grid-column: 1 / -1; margin: 0 0 4px; padding: 16px 18px; border-radius: 12px; background: var(--ambar-claro); color: var(--ambar-escuro); border: 1px solid #f3d38a; }
 .logo-sobre { float: right; width: 180px; height: 180px; margin: 0 0 16px 24px; border-radius: var(--raio); background: #fff; }
 @media (max-width: 600px) { .logo-sobre { float: none; display: block; margin: 0 auto 16px; width: 140px; height: 140px; } }
+
+/* Vitrine (carrossel de golpes em alta) */
+.vitrine { width: 100%; max-width: 420px; justify-self: center; min-width: 0; }
+.vitrine-rotulo { display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px; background: var(--ambar-claro); color: var(--ambar-escuro); font-weight: 700; font-size: .9rem; }
+.vitrine-trilho { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: 22px; scrollbar-width: none; box-shadow: var(--sombra); }
+.vitrine-trilho::-webkit-scrollbar { display: none; }
+.vitrine-trilho:focus-visible { outline: 3px solid var(--aviso); outline-offset: 3px; }
+.vitrine-slide { flex: 0 0 100%; scroll-snap-align: start; display: flex; flex-direction: column; gap: 12px; min-height: 340px; padding: 32px 28px; color: #fff; text-decoration: none; }
+.vitrine-slide.pix { background: linear-gradient(150deg, #0b7a3c, #0b5d34); }
+.vitrine-slide.advogado { background: linear-gradient(150deg, #23466e, #10261a); }
+.vitrine-slide.ifood { background: linear-gradient(150deg, #c52a30, #8f1a1f); }
+.vitrine-icone { font-size: 3rem; line-height: 1; }
+.vitrine-slide strong { font-family: "Archivo Black", "Inter", sans-serif; font-size: 1.65rem; line-height: 1.15; }
+.vitrine-slide span:not(.vitrine-icone) { font-size: 1.02rem; line-height: 1.55; }
+.vitrine-slide em { margin-top: auto; align-self: flex-start; font-style: normal; font-weight: 700; padding: 8px 18px; border-radius: 999px; background: rgba(255,255,255,.18); }
+.vitrine-slide:hover em { background: rgba(255,255,255,.3); }
+.vitrine-slide:focus-visible { outline: 3px solid var(--aviso); outline-offset: -4px; }
+.vitrine-controles { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }
+.vitrine-seta { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--borda); background: #fff; color: var(--tinta); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.vitrine-seta:hover { border-color: var(--verde); color: var(--verde-escuro); }
+.vitrine-pontos { display: flex; gap: 8px; }
+.vitrine-pontos button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: #d9cfb8; cursor: pointer; transition: width .2s, background .2s; }
+.vitrine-pontos button[aria-current="true"] { width: 28px; background: var(--verde); }
+@media (max-width: 860px) {
+  .vitrine { max-width: 520px; }
+  .vitrine-slide { min-height: 270px; padding: 26px 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .vitrine-trilho { scroll-behavior: auto; } }

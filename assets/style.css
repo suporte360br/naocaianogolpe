@@ -277,3 +277,9 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
   .tile { font-size: .78rem; }
   .tile img { width: 40px; height: 40px; }
 }
+.selo-licenca { margin: -36px 0 40px; font-size: .88rem; color: var(--suave); }
+.direitos { margin-top: 48px; padding: 28px 28px 20px; background: var(--fundo-alt); border: 1px solid var(--borda); border-radius: var(--raio); font-size: .95rem; }
+.direitos h2 { font-size: 1.5rem; }
+.direitos h3 { font-size: 1.05rem; margin-top: 22px; }
+.direitos .copyright { font-weight: 600; }
+@media (max-width: 700px) { .direitos { padding: 20px 18px 12px; } .selo-licenca { margin-top: -28px; } }

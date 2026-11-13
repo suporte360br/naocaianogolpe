@@ -283,3 +283,5 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .direitos h3 { font-size: 1.05rem; margin-top: 22px; }
 .direitos .copyright { font-weight: 600; }
 @media (max-width: 700px) { .direitos { padding: 20px 18px 12px; } .selo-licenca { margin-top: -28px; } }
+.rodape .youtube { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 8px 14px; border: 1px solid #2a323b; border-radius: 999px; font-weight: 600; }
+.rodape .youtube:hover { border-color: #ff0000; color: #fff; }

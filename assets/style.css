@@ -240,3 +240,40 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
   .vitrine-img { width: 72px; }
 }
 @media (prefers-reduced-motion: reduce) { .vitrine-trilho { scroll-behavior: auto; } }
+
+/* Cultura: fascículos da Cartilha do CERT.br */
+.cultura { padding: 36px 0 64px; }
+.cultura-intro { max-width: 70ch; font-size: 1.08rem; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; margin: 28px 0 48px; }
+.tile { aspect-ratio: 1; background: var(--cor); color: #fff; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 12px 8px; text-align: center; font-weight: 600; font-size: .9rem; line-height: 1.2; border-radius: 6px; transition: transform .15s, box-shadow .15s; }
+.tile img { width: 52px; height: 52px; }
+.tile:hover, .tile:focus-visible { transform: translateY(-3px); box-shadow: var(--sombra); }
+.fasciculo { display: grid; grid-template-columns: 200px 1fr; gap: 28px; padding: 28px 0; border-top: 1px solid var(--borda); scroll-margin-top: 90px; }
+.fasciculo .capa img { width: 100%; height: auto; border-radius: 8px; border-top: 6px solid var(--cor); box-shadow: var(--sombra); }
+.fasciculo h2 { margin: 0 0 8px; font-size: 1.6rem; color: var(--cor); }
+.fasciculo-corpo p { margin: 0 0 14px; }
+.baixar { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 14px; }
+.baixar .btn { font-size: .92rem; padding: 10px 16px; }
+.links-assoc { list-style: none; padding: 0; margin: 0 0 8px; }
+.links-assoc li { margin: 4px 0; }
+.videos { margin: 6px 0 12px; }
+.videos summary { cursor: pointer; font-weight: 600; color: var(--verde-escuro); }
+.videos ul { columns: 2; column-gap: 28px; margin: 10px 0 0; padding-left: 20px; }
+.videos li { break-inside: avoid; margin: 3px 0; }
+.guias-rel { font-size: .95rem; background: var(--fundo-alt); border-left: 4px solid var(--verde); padding: 10px 14px; border-radius: 6px; }
+.conheca { text-align: center; margin: 56px 0 24px; padding-top: 40px; border-top: 1px solid var(--borda); }
+.conheca > p { color: var(--suave); }
+.conheca-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 28px; }
+.conheca-icone { font-size: 3rem; line-height: 1; display: block; margin-bottom: 10px; }
+.conheca h3 { color: var(--verde-escuro); }
+.conheca-links a { font-weight: 700; text-transform: uppercase; font-size: .9rem; margin: 0 8px; }
+.credito { font-size: .88rem; color: var(--suave); margin-top: 40px; padding: 14px 16px; background: var(--fundo-alt); border-radius: 8px; }
+@media (max-width: 700px) {
+  .fasciculo { grid-template-columns: 1fr; }
+  .fasciculo .capa { max-width: 200px; }
+  .videos ul { columns: 1; }
+  .conheca-grade { grid-template-columns: 1fr; }
+  .tiles { grid-template-columns: repeat(3, 1fr); }
+  .tile { font-size: .78rem; }
+  .tile img { width: 40px; height: 40px; }
+}

@@ -285,3 +285,59 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 @media (max-width: 700px) { .direitos { padding: 20px 18px 12px; } .selo-licenca { margin-top: -28px; } }
 .rodape .youtube { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; padding: 8px 14px; border: 1px solid #2a323b; border-radius: 999px; font-weight: 600; }
 .rodape .youtube:hover { border-color: #ff0000; color: #fff; }
+
+/* Redes sociais */
+.social-topo { display: flex; gap: 10px; align-items: center; margin-left: 18px; }
+.social-topo a { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; transition: transform .15s; }
+.social-topo a:hover { transform: translateY(-2px); }
+.social-topo svg { width: 28px; height: 28px; display: block; }
+.topo .container { gap: 8px; }
+.topo .menu { margin-left: auto; order: 2; }
+.social-topo { order: 3; }
+.menu-botao { order: 4; }
+.social-rodape { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 4px; }
+.rede { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border: 1px solid #2a323b; border-radius: 999px; font-weight: 600; text-decoration: none; }
+.rede svg { width: 22px; height: 22px; flex: none; }
+.rodape .rede:hover { border-color: var(--verde-claro); color: #fff; }
+/* Faixa siga (home) */
+.siga-faixa { background: var(--tinta); color: #e6efe9; padding: 34px 0; }
+.siga-grade { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.siga-faixa h2 { color: #fff; font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 0 0 6px; }
+.siga-faixa p { margin: 0; color: #b9cbbf; }
+.siga-botoes { display: flex; gap: 14px; flex-wrap: wrap; }
+.rede.grande { background: #fff; color: var(--tinta); border-color: #fff; padding: 10px 20px 10px 12px; border-radius: 14px; }
+.rede.grande svg { width: 34px; height: 34px; }
+.rede.grande span { display: flex; flex-direction: column; line-height: 1.2; font-weight: 800; }
+.rede.grande small { font-weight: 600; color: var(--suave); font-size: .82rem; }
+.rede.grande:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
+/* Convite Instagram nos artigos */
+.siga-insta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 36px 0 18px; padding: 18px 20px; border-radius: var(--raio); background: linear-gradient(120deg, #fff4fb, #fff8ec); border: 1px solid #f4d6e8; }
+.siga-insta > svg { width: 44px; height: 44px; flex: none; }
+.siga-insta p { margin: 0; flex: 1 1 260px; }
+.btn.insta { background: linear-gradient(90deg, #d6249f, #fd5949); }
+.btn.insta:hover { filter: brightness(.95); }
+/* Shorts */
+.video-short { margin: 24px 0 30px; }
+.video-quadro { width: min(100%, 320px); aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: var(--tinta); box-shadow: var(--sombra); }
+.video-quadro iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-short figcaption { margin-top: 10px; font-size: .95rem; color: var(--suave); }
+/* Sobre este guia */
+.sobre-guia { margin: 28px 0 8px; padding: 20px 22px; border-radius: var(--raio); background: var(--fundo-alt); border: 1px solid var(--borda); font-size: .93rem; }
+.sobre-guia h2 { font-size: 1.15rem; margin: 0 0 10px; }
+.sobre-guia ul { margin: 0; padding-left: 18px; }
+.sobre-guia li { margin: 4px 0; }
+@media (max-width: 860px) {
+  .social-topo { margin-left: auto; order: 2; }
+  .menu-botao { order: 3; }
+  .social-topo a { width: 34px; height: 34px; }
+  .topo .menu { margin-left: 0; }
+}
+.menu a { white-space: nowrap; }
+@media (min-width: 861px) and (max-width: 1120px) {
+  .menu { gap: 14px; }
+  .menu a { font-size: .88rem; }
+  .menu .btn { padding: 10px 16px; }
+  .social-topo { margin-left: 10px; gap: 6px; }
+  .social-topo a { width: 30px; height: 30px; }
+  .social-topo svg { width: 24px; height: 24px; }
+}

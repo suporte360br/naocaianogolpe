@@ -341,3 +341,30 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
   .social-topo a { width: 30px; height: 30px; }
   .social-topo svg { width: 24px; height: 24px; }
 }
+
+/* Busca e temas */
+.busca-guias { padding: 28px 0 56px; }
+.busca label { display: block; font-weight: 800; color: var(--tinta); margin-bottom: 8px; }
+.busca-campo { display: flex; align-items: center; gap: 10px; background: #fff; border: 2px solid var(--borda); border-radius: 999px; padding: 6px 6px 6px 18px; max-width: 640px; }
+.busca-campo:focus-within { border-color: var(--verde); box-shadow: 0 0 0 4px rgba(18,161,80,.12); }
+.busca-campo input { flex: 1; border: 0; outline: 0; font: inherit; font-size: 1.05rem; padding: 8px 0; background: transparent; min-width: 0; }
+.busca-campo .btn { padding: 10px 22px; }
+.temas-filtro { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
+.temas-filtro button { font: inherit; font-size: .92rem; font-weight: 600; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--borda); background: #fff; color: var(--texto); cursor: pointer; }
+.temas-filtro button:hover { border-color: var(--verde); }
+.temas-filtro button[aria-pressed="true"] { background: var(--verde); border-color: var(--verde); color: #fff; }
+.busca-contagem { color: var(--suave); font-size: .92rem; margin: 6px 0 16px; min-height: 1.4em; }
+.grade.guias .cartao[hidden] { display: none; }
+.etiquetas { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
+.etiquetas span { font-size: .75rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--fundo-alt); border: 1px solid var(--borda); color: var(--suave); }
+.busca-vazia { padding: 22px; border-radius: var(--raio); background: var(--fundo-alt); border: 1px dashed var(--borda); }
+.busca.home { margin: 6px 0 22px; }
+.temas-atalho { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.temas-atalho a { font-size: .88rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--borda); background: #fff; color: var(--texto); text-decoration: none; }
+.temas-atalho a:hover { border-color: var(--verde); color: var(--verde-escuro); }
+@media (max-width: 520px) { .busca-campo .btn { padding: 10px 14px; } }
+@media (max-width: 600px) {
+  .temas-filtro, .temas-atalho { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -16px; padding-right: 16px; -webkit-overflow-scrolling: touch; }
+  .temas-filtro::-webkit-scrollbar, .temas-atalho::-webkit-scrollbar { display: none; }
+  .temas-filtro button, .temas-atalho a { flex: none; white-space: nowrap; }
+}

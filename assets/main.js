@@ -331,3 +331,39 @@ document.querySelectorAll('.vitrine').forEach(v => {
   marcar();
   iniciar();
 });
+
+// Busca e filtro de guias (página /artigos/)
+(function () {
+  const campo = document.getElementById('busca-golpe');
+  if (!campo) return;
+  const cartoes = [...document.querySelectorAll('.grade.guias .cartao')];
+  const botoes = [...document.querySelectorAll('.temas-filtro button')];
+  const contagem = document.querySelector('.busca-contagem');
+  const vazio = document.querySelector('.busca-vazia');
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const texto = new Map(cartoes.map(c => [c, norm(c.textContent + ' ' + (c.dataset.palavras || ''))]));
+  let tema = '';
+  const params = new URLSearchParams(location.search);
+  if (params.get('q')) campo.value = params.get('q');
+  if (params.get('tema') && botoes.some(b => b.dataset.tema === params.get('tema'))) tema = params.get('tema');
+  function aplicar() {
+    const termos = norm(campo.value).split(/\s+/).filter(Boolean);
+    let n = 0;
+    for (const c of cartoes) {
+      const okTema = !tema || c.dataset.temas.split(' ').includes(tema);
+      const okBusca = termos.every(t => texto.get(c).includes(t));
+      c.hidden = !(okTema && okBusca);
+      if (!c.hidden) n++;
+    }
+    botoes.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tema === tema)));
+    vazio.hidden = n > 0;
+    contagem.textContent = (termos.length || tema) ? (n === 1 ? '1 guia encontrado' : n + ' guias encontrados') : cartoes.length + ' guias';
+    const url = new URL(location.href);
+    campo.value ? url.searchParams.set('q', campo.value) : url.searchParams.delete('q');
+    tema ? url.searchParams.set('tema', tema) : url.searchParams.delete('tema');
+    history.replaceState(null, '', url);
+  }
+  campo.addEventListener('input', aplicar);
+  botoes.forEach(b => b.addEventListener('click', () => { tema = b.dataset.tema; aplicar(); }));
+  aplicar();
+})();

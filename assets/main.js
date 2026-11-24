@@ -336,6 +336,7 @@ document.querySelectorAll('.vitrine').forEach(v => {
 (function () {
   const campo = document.getElementById('busca-golpe');
   if (!campo) return;
+  if (campo.form) campo.form.addEventListener('submit', e => e.preventDefault());
   const cartoes = [...document.querySelectorAll('.grade.guias .cartao')];
   const botoes = [...document.querySelectorAll('.temas-filtro button')];
   const contagem = document.querySelector('.busca-contagem');

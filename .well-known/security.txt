@@ -1,0 +1,7 @@
+# Não Caia no Golpe — contato de segurança
+# Use este contato para relatar vulnerabilidades neste site ou
+# sites, perfis e mensagens falsas usando o nome Não Caia no Golpe.
+Contact: mailto:contato@naocaianogolpe.com.br
+Expires: 2027-11-24T00:00:00.000Z
+Preferred-Languages: pt, en
+Canonical: https://naocaianogolpe.com.br/.well-known/security.txt

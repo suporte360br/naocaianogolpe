@@ -386,3 +386,5 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .inscreva-yt p { margin: 0; flex: 1 1 260px; }
 .btn.yt { background: #ff0000; color: #fff; border-color: #ff0000; }
 .btn.yt:hover { background: #cc0000; border-color: #cc0000; }
+
+.video-parte2 { margin: 0 0 24px; padding: 14px 18px; border-radius: var(--raio); background: #f2f7f4; border: 1px solid #d6e6dc; }

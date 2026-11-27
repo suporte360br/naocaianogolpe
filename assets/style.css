@@ -397,3 +397,5 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .caso-cartao h3 { margin: 0; font-size: 1.15rem; }
 .caso-cartao p { margin: 0; font-size: .95rem; color: var(--suave, #4a5a50); flex: 1; }
 .caso-lugar { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; color: #b3261e; }
+
+.video-tv .video-quadro { width: 100%; max-width: 720px; aspect-ratio: 16 / 9; }

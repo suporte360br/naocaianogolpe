@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Não Caia no Golpe: alertas da semana</title>
+  <link>https://naocaianogolpe.com.br/alertas.html</link>
+  <atom:link href="https://naocaianogolpe.com.br/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Os golpes que estão circulando no Brasil, com o que fazer e o guia completo.</description>
+  <language>pt-BR</language>
+  <lastBuildDate>Thu, 26 Nov 2026 12:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Black Friday: “pedido retido” e falsa taxa de entrega</title>
+    <link>https://naocaianogolpe.com.br/alertas.html#alerta-2026-11-26</link>
+    <guid isPermaLink="true">https://naocaianogolpe.com.br/alertas.html#alerta-2026-11-26</guid>
+    <pubDate>Thu, 26 Nov 2026 12:00:00 GMT</pubDate>
+    <description>Depois das compras de Black Friday, começam a chegar SMS, e-mails e mensagens de WhatsApp dizendo que o pedido está retido, que falta pagar uma taxa de entrega ou que o endereço precisa ser confirmado. O link leva a uma página falsa que cobra um Pix pequeno ou rouba os dados do cartão. Junto com isso, circulam lojas falsas com descontos impossíveis e cupons “exclusivos” por WhatsApp. O que fazer: Confira o andamento do pedido só no site ou no aplicativo da loja onde você comprou. Não pague taxa de entrega por link de mensagem. Lojas e transportadoras não cobram assim. Antes de qualquer Pix, leia o nome do recebedor: deve ser a loja, não uma pessoa física. Prefira cartão de crédito virtual, que permite contestar a compra. Guia completo: https://naocaianogolpe.com.br/artigos/golpes-black-friday.html</description>
+  </item>
+</channel>
+</rss>

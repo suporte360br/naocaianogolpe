@@ -380,3 +380,9 @@ section.tema .grade { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr
 .mais-temas { margin: 24px 0 0; font-weight: 700; }
 .guias-novos, .paginas-tema { margin-top: 20px; line-height: 1.8; }
 .paginas-tema { font-size: .95rem; }
+
+.inscreva-yt { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 0 0 18px; padding: 18px 20px; border-radius: var(--raio); background: linear-gradient(120deg, #fff1f0, #fff8ec); border: 1px solid #f6d2cf; }
+.inscreva-yt > svg { width: 44px; height: 44px; flex: none; }
+.inscreva-yt p { margin: 0; flex: 1 1 260px; }
+.btn.yt { background: #ff0000; color: #fff; border-color: #ff0000; }
+.btn.yt:hover { background: #cc0000; border-color: #cc0000; }

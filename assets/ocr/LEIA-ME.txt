@@ -1,0 +1,2 @@
+Tesseract.js 5 (Apache-2.0), tesseract.js-core 5 e dados do idioma português (@tesseract.js-data/por, best_int).
+Usado pelo validador.html para ler prints no próprio aparelho. Nada é enviado a servidores.
